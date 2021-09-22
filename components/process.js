@@ -16,7 +16,6 @@ const Process = props => {
         const context = canvas.getContext('2d')
         console.log('context', context);
 
-        //Our draw come here
         c_tmp = document.createElement('canvas')
         c_tmp.setAttribute("width", 400)
         c_tmp.setAttribute("height", 360)
@@ -30,7 +29,7 @@ const Process = props => {
         let frame = ctx_tmp.getImageData(0, 0, video.width, video.height);
 
         ctx_out.current.putImageData(frame, 0, 0);
-        setTimeout(computeFrame, 0)
+        setTimeout(computeFrame,0)
 
     }
 
