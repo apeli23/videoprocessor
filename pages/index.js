@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 import Process from '../components/process'
 import Canvas from '../components/test'
+import Test from '../components/test2'
 
 export default function Home() {
   const video = useRef();
@@ -8,8 +9,9 @@ export default function Home() {
 
   return (
     <div>
-      <Process />
+      {/* <Process /> */}
       {/* <Canvas /> */}
+      <Test />
     </div>
   )
 }
