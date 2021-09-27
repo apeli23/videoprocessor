@@ -30,13 +30,21 @@ const Test2 = props => {
             ctx_tmp.drawImage(video, 0, 0, video.width, video.height);
             let frame = ctx_tmp.getImageData(0, 0, video.width, video.height);
 
+            for(let i=0; i<frame.data.length/4; i++){
+                let r = frame.data[i*4+0];
+                let g = frame.data[i*4+1];
+                let b = frame.data[i*4+2];
+                if(r > 70 && r < 160 && g >95 && g < 220 && b>25  && b < 150){
+                    frame.data[i * 4 + 3]=0
+                }
+            }
             ctx_out.putImageData(frame, 0, 0);
             setTimeout(computeFrame, 0)
         })
     }, [])
     return (
         <div>
-            <video crossOrigin="Anonymous" ref={vid} src='https://res.cloudinary.com/dogjmmett/video/upload/v1632248825/yt5s.com-Lady_Explaining_Green_Screen____No_Copyright_Free_Video____Vistan_Videos_720p_vs3jop.mp4' id='video' width='400' height='360' controls autoPlay muted loop type="video/mp4" />
+            <video crossOrigin="Anonymous" ref={vid} src='https://res.cloudinary.com/dogjmmett/video/upload/v1632221403/sample_mngu99.mp4' id='video' width='400' height='360' controls autoPlay muted loop type="video/mp4" />
 
             <canvas ref={canvasRef} {...props}></canvas>
         </div>
