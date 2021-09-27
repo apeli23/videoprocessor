@@ -8,8 +8,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* <Process /> */}
-      <Canvas />
+      <Process />
+      {/* <Canvas /> */}
     </div>
   )
 }
